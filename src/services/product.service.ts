@@ -2,10 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 
-import { CategoryList } from '../models/CategoryList';
 import { Category } from '../models/Category';
-import { ProductList } from '../models/ProductList';
-import { ProductData } from '../models/ProductData';
 import { Product } from '../models/Product';
 
 @Injectable()
@@ -16,8 +13,8 @@ export class ProductsService {
   constructor(private _http: HttpClient) { }
 
   // --- Category ---
-  getCategories(): Observable<CategoryList> {
-    return this._http.get<CategoryList>(this.categoryUrl);
+  getCategories(): Observable<Category> {
+    return this._http.get<Category>(this.categoryUrl);
   }
 
   getCategory(id: number): Observable<Category> {
@@ -37,12 +34,12 @@ export class ProductsService {
   }
 
   // --- Product ---
-  getProducts(): Observable<ProductList> {
-    return this._http.get<ProductList>(this.productUrl);
+  getProducts(): Observable<Product> {
+    return this._http.get<Product>(this.productUrl);
   }
 
-  getProduct(id: number): Observable<ProductData> {
-    return this._http.get<ProductData>(this.productUrl + '/' + id);
+  getProduct(id: number): Observable<Product> {
+    return this._http.get<Product>(this.productUrl + '/' + id);
   }
 
   addProduct(product: Product): Observable<any> {

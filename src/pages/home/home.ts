@@ -3,10 +3,9 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ProductsService } from '../../services/product.service';
 import { UsersService } from '../../services/user.service';
 
-import { AllProducts } from '../../models/AllProducts';
-import { Category } from '../../models/Category';
+// import { Category } from '../../models/Category';
 import { Product } from '../../models/Product';
-import { User } from '../../models/User';
+// import { User } from '../../models/User';
 
 
 @IonicPage()
@@ -23,7 +22,7 @@ export class HomePage implements OnInit{
     image5: 'test5',
     image6: 'test6'
   }]
-  Products: Product[];
+  Products: Product[] = [];
 
   grid = [];
   constructor(public navCtrl: NavController, public navParams: NavParams, private svc: ProductsService) {
@@ -48,7 +47,7 @@ export class HomePage implements OnInit{
   ngOnInit() {
     this.svc.getProducts().subscribe(prod => {
       this.Products = prod;
-      console.log(prod.data)
+      console.log(prod)
     });
   }
 
