@@ -1,12 +1,15 @@
 <ion-menu [content]="content">
   <ion-header >
     <ion-toolbar color="dark">
-      <ion-title>Elite Schedule</ion-title>
+      <!-- <ion-title>Elite Schedule</ion-title> -->
     </ion-toolbar>
   </ion-header>
 
   <ion-content class="dark-menu">
     <ion-list class="dark-menu">
+        <button menuClose ion-item (click)="goToHome()">
+          Home Page
+        </button>
       <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
         {{p.title}}
       </button>

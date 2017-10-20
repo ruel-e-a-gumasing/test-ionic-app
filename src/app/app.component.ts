@@ -3,7 +3,7 @@ import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { MyTeamsPage, GamePage, TournamentsPage } from "../pages/pages";
+import { HomePage, AccountPage, AdminPage, ProductsPage } from "../pages/pages";
 
 @Component({
   templateUrl: 'app.html'
@@ -11,7 +11,7 @@ import { MyTeamsPage, GamePage, TournamentsPage } from "../pages/pages";
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = MyTeamsPage;
+  rootPage: any = HomePage;
 
   pages: Array<{title: string, component: any}>;
 
@@ -20,9 +20,14 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'My Teams', component: MyTeamsPage },
-      { title: 'Games', component: GamePage },
-      { title: 'Tournaments', component: TournamentsPage },
+      //{ title: 'My Teams', component: MyTeamsPage }, HomePage = productsPage
+      { title: 'Categories', component: ProductsPage },//Category, product
+      { title: 'All Products', component: ProductsPage },//Category, product
+      { title: 'Account', component: AccountPage },//Account
+      { title: 'Admin Settings', component: AdminPage },//Account
+
+
+      
       
     ];
 
@@ -36,6 +41,10 @@ export class MyApp {
       this.splashScreen.hide();
     });
   }
+  goToHome(){
+    this.nav.setRoot(HomePage)
+  }
+
 
   openPage(page) {
     // Reset the content nav to have just this page

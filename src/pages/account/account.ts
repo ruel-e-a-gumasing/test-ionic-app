@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the TeamDetailPage page.
+ * Generated class for the AccountPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -10,16 +10,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-team-detail',
-  templateUrl: 'team-detail.html',
+  selector: 'page-account',
+  templateUrl: 'account.html',
 })
-export class TeamDetailPage {
+export class AccountPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad TeamDetailPage');
+    console.log('ionViewDidLoad AccountPage');
   }
 
 }
