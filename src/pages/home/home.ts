@@ -46,7 +46,10 @@ export class HomePage implements OnInit{
 
   ngOnInit() {
     this.svc.getProducts().subscribe(prod => {
-      this.Products = prod;
+      for(const prd of prod){
+        this.Products.push(prd);
+      }
+      
       console.log(prod)
     });
   }
