@@ -1,69 +1,58 @@
 <ion-header>
-    <ion-navbar color="dark">
+  <ion-navbar color="dark">
+
       
-
-    
-
     <ion-grid>
         <ion-row>
-          <ion-col col-xs>
+          <!-- menu button -->
+          <ion-col col-xs >
             <button ion-button menuToggle>
-        <ion-icon name="menu"></ion-icon>
-      </button>
-      
+              <ion-icon name="menu">
+              </ion-icon>
+            </button>
+
+          <!-- search bar -->
           </ion-col>
-          <ion-col col-10>
+          <ion-col col-8>
             <ion-searchbar
-      [(ngModel)]="myInput"
-      [showCancelButton]="shouldShowCancel"
-      (ionInput)="onInput($event)"
-      (ionCancel)="onCancel($event)">
-    </ion-searchbar>
+              [(ngModel)]="myInput"
+              [showCancelButton]="shouldShowCancel"
+              (ionInput)="onInput($event)"
+              (ionCancel)="onCancel($event)">
+            </ion-searchbar>
           </ion-col>
-          
-      <ion-col>
-      
-      <ion-segment color="secondary" mode="ios" isActive=true>
-          <ion-segment-button value="peso" >
-              &#8369;
-          </ion-segment-button>
-          <ion-segment-button value="dollar" >
-              &#36;
-          </ion-segment-button>
-          
-        </ion-segment>
-      
+
+          <!-- peso dollar -->
+          <ion-col col-xs>
+            <ion-segment color="secondary" mode="ios" isActive=true>
+              <ion-segment-button value="peso">
+                  &#8369;
+              </ion-segment-button>
+              <ion-segment-button value="dollar">
+                  &#36;
+              </ion-segment-button>
+            </ion-segment>
           </ion-col>
+
         </ion-row>
       </ion-grid>
 
     </ion-navbar> 
     
-
-
-
-
-
-
-<!-- Secondary Header -->
+    <!-- Secondary Header -->
     <ion-toolbar color="primary">
       <ion-title>Categories</ion-title>
-      
     </ion-toolbar>
-  </ion-header>
+</ion-header>
   
   
   <ion-content padding mode="ios">
-    
-
-
-    
       <ion-grid>
           <ion-row *ngFor="let row of grid">
             <ion-col width-50 *ngFor="let file_uri of row">
-              <img [src]="file_uri">
-              <ion-card>
-                  <img src="img/nin-live.png"/>
+              <!-- <img [src]="file_uri"> -->
+                <ion-card>
+                  <img src="img/nin-live.png"  alt="no saved image"/>
                   <ion-card-content>
                     <ion-card-title>
                       Card Header
