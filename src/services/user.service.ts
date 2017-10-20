@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 
 import 'rxjs/add/operator/map';
@@ -10,7 +10,7 @@ import { UserList } from '../models/UserList';
 
 @Injectable()
 export class UsersService {
-  private userUrl = 'http://localhost:8080/users';
+  private userUrl = 'http://localhost:8090/users';
 
   currentUser: User;
 

@@ -44,15 +44,18 @@
       <ion-title>Categories</ion-title>
     </ion-toolbar>
 </ion-header>
-  
-  
+  <ion-content>
+    <ion-row *ngFor="let user of Users">
+      {{user}}
+    </ion-row>
+  </ion-content>
+
   <ion-content padding mode="ios">
       <ion-grid>
           <ion-row *ngFor="let row of grid">
             <ion-col width-50 *ngFor="let file_uri of row">
-              <!-- <img [src]="file_uri"> -->
                 <ion-card>
-                  <img src="img/nin-live.png"  alt="no saved image"/>
+                  <img src=""  alt="no saved image"/>
                   <ion-card-content>
                     <ion-card-title>
                       Card Header

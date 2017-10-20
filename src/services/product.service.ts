@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 
 import { CategoryList } from '../models/CategoryList';
@@ -10,8 +10,8 @@ import { Product } from '../models/Product';
 
 @Injectable()
 export class ProductsService {
-  private categoryUrl = 'http://localhost:8080/categories';
-  private productUrl = 'http://localhost:8080/products';
+  private categoryUrl = 'http://localhost:8090/categories';
+  private productUrl = 'http://localhost:8090/products';
 
   constructor(private _http: HttpClient) { }
 

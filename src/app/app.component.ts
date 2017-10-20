@@ -26,11 +26,7 @@ export class MyApp {
       { title: 'Account', component: AccountPage },//Account
       { title: 'Admin Settings', component: AdminPage },//Account
 
-
-      
-      
     ];
-
   }
 
   initializeApp() {
