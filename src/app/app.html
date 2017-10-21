@@ -5,15 +5,68 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-content class="dark-menu">
-    <ion-list class="dark-menu">
-        <button menuClose ion-item (click)="goToHome()">
+  <!-- <ion-content class="dark-menu">
+    <ion-list class="dark-menu" *ngFor="let p of menus">
+        <!-- <button menuClose ion-item (click)="goToHome()">
           Home Page
         </button>
       <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
         {{p.title}}
-      </button>
+      </button> -->
+        <!-- <button menuClose ion-item>
+          {{p.categoryName}}
+        </button>
+        <button menuClose ion-item *ngFor="let a of p.products">
+          {{a.name}}
+        </button>
     </ion-list>
+  </ion-content> -->
+
+  <!-- close button -->
+  <button ion-button menuClose mode="ios" class="menu-close-button menu-main-color">
+    <ion-icon name="ios-close" style="font-size: 5vw;"></ion-icon>
+  </button>
+  <!-- side menu header -->
+  <ion-header>
+    <ion-row no-padding>
+      <ion-col col-2>
+        <ion-avatar>
+          <img src="{{userInfo.url}}">
+        </ion-avatar>
+      </ion-col>
+      <ion-col col-8>
+        <span class="user-info">
+          <p>
+            <span>{{userInfo.position}}</span><br/>
+            <ion-note>{{userInfo.name}}</ion-note>
+          </p>
+        </span>
+      </ion-col>
+      <ion-col col-2>
+        <button ion-button mode="ios" class="menu-main-color"><!--  add log in/out -->
+          <ion-icon name="log-in" style="font-size: 3vw;">
+            <!-- <ion-badge> </ion-badge> -->
+          </ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-header>
+
+  <!-- side menu list -->
+  <ion-content>
+    <ng-container *ngFor="let m of menuList; let i = index;">
+      <ion-item-group>
+        <button ion-item no-lines class="menu-main-color" (click)="toggleList(i)">
+          <ion-icon *ngIf="m.icon !== ''" name="{{m.icon}}"></ion-icon>
+          {{ m.title }}
+        </button>
+        <ng-container *ngFor="let p of m.content">
+          <button ion-item *ngIf="visibleList[i] === 1" no-lines class="menu-sub-color" (click)="openPage(p)">
+            {{ p.title }}
+          </button>
+        </ng-container>
+      </ion-item-group>
+    </ng-container>
   </ion-content>
 
 </ion-menu>

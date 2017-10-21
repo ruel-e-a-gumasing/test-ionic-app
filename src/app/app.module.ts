@@ -6,24 +6,19 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { MyApp } from './app.component';
 import { HomePage, AccountPage, AdminPage, ProductsPage  } from '../pages/pages';
-
+import { PagesModule } from '../pages/pages.module';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ProductsService } from '../services/product.service';
 import { UsersService } from '../services/user.service';
 
 @NgModule({
-  declarations: [
-    MyApp,
-    HomePage,
-    ProductsPage,
-    AccountPage,
-    AdminPage
-  ],
+  declarations: [MyApp],
   imports: [
     BrowserModule,
     HttpClientModule,
     IonicModule.forRoot(MyApp),
+    PagesModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [

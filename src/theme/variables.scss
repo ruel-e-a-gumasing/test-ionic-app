@@ -40,8 +40,52 @@ $colors: (
   light:      #f4f4f4,
   dark:       #222,
 );
+// Shared Variables
+// --------------------------------------------------
+// To customize the look and feel of this app, you can override
+// the Sass variables found in Ionic's source scss files.
+// To view all the possible Ionic variables, see:
+// http://ionicframework.com/docs/v2/theming/overriding-ionic-variables/
 
-
+$menu-colors: (
+  menu-main-color: #32363e,
+  menu-sub-color: #303949,
+  menu-border: #373b42,
+  menu-text-white: #ffffff,
+);
+// $sip-colors: (
+//   sip-validation-error: #fbb1b1,
+//   sip-border-gray: #e2e2e2,
+//   sip-border-white: #ffffff,
+//   sip-button-disabled: #e4e4e4,
+//   sip-button-gray: #d9d9d9,
+//   sip-button-white: #ffffff,
+//   sip-button-border-gray:#b7b6bc,
+//   sip-bg-white: #ffffff,
+//   sip-bg-lightgray: #d5daf0,
+//   sip-caution: #f8e71c,
+//   sip-graph-chart-1: #9ba3e9,
+//   sip-graph-chart-2: #8bd8bb,
+//   sip-graph-chart-3: #e3e3f7,
+//   sip-graph-chart-4: #b3d8e6,
+//   sip-graph-line-1: #1f1f91,
+//   sip-menu-icon: #4d5fac,
+//   sip-primary: #566bc1,
+//   sip-table-background: #f0f0f1,
+//   sip-list-table-head: #d6d9ee,
+//   sip-list-table-head2: #cacde0,
+//   sip-list-td-border: #f3f3f3,
+//   sip-list-table-text: #5f626b,
+//   sip-text-black: #000000,
+//   sip-text-blue: #000081,
+//   sip-text-gray: #67646f,
+//   sip-text-muddyblue: #4b7d96,
+//   sip-text-red: #c00000,
+//   sip-text-white: #ffffff,
+//   sip-toggle-button-off: #aab5e0,
+//   sip-graph-chart-sales-plan: #9da2e4,
+//   sip-graph-chart-sales-actual:#f4b1b0,
+// );
 // App iOS Variables
 // --------------------------------------------------
 // iOS only Sass variables can go here

@@ -3,9 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ProductsService } from '../../services/product.service';
 import { UsersService } from '../../services/user.service';
 
-// import { Category } from '../../models/Category';
 import { Product } from '../../models/Product';
-// import { User } from '../../models/User';
 
 
 @IonicPage()
@@ -14,6 +12,7 @@ import { Product } from '../../models/Product';
   templateUrl: 'home.html',
 })
 export class HomePage implements OnInit{
+  
   images = [{
     image1: 'test1',
     image2: 'test2',
@@ -43,7 +42,7 @@ export class HomePage implements OnInit{
         rowNum++; //go on to the next row
       }
   }
-
+  
   ngOnInit() {
     this.svc.getProducts().subscribe(prod => {
       for(const prd of prod){
@@ -53,5 +52,7 @@ export class HomePage implements OnInit{
       console.log(prod)
     });
   }
+
+  
 
 }

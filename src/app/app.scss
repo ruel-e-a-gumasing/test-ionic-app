@@ -30,3 +30,153 @@ ion-header{
 .dark-menu{
     background-color: #3C3C3C;
 }
+
+
+.menu-close-button {
+    border-radius: 0;
+    left: 0;
+    margin: 0;
+    min-height: 56px;
+    min-width: 56px;
+    position: absolute;
+    top: 0;
+    z-index: 81;
+  }
+  
+  .menu-inner {
+    background: transparent !important;
+    box-shadow: unset !important;
+    pointer-events: none;
+    width: 70% !important;
+  
+    img,
+    button,
+    ion-avatar {
+      margin: auto;
+    }
+  
+    ion-avatar img {
+      width: 75%;
+    }
+  
+    ion-col {
+      background-color: color($menu-colors, menu-main-color);
+      display: flex;
+      justify-content: center;
+    }
+  
+    .badge-md {
+      background-color: color($colors, danger);
+      border-radius: 100%;
+    }
+  
+    ion-badge {
+      min-height: 8px;
+      min-width: 8px;
+      padding: 3px;
+      position: absolute;
+      right: 15px;
+      top: 12px;
+    }
+  
+    ion-content {
+      box-shadow: 0 0 10px rgba(0, 0, 0, .25);
+  
+      ion-lsit-header > ion-icon {
+        margin-right: 5px;
+      }
+    }
+  
+    ion-header,
+    ion-content,
+    ion-footer {
+      pointer-events: all;
+      top: 57px !important;
+      width: 55%;
+    }
+  
+    .notifications-list {
+      height: calc(100% - 57px);
+      left: 55%;
+      overflow-y: scroll;
+      pointer-events: all;
+      position: absolute;
+      top: 57px;
+      width: 45%;
+  
+      ion-label {
+        font-size: 1.4vw;
+      }
+  
+      ion-note {
+        font-size: 1.1vw;
+      }
+    }
+  
+    .scroll-content {
+      background-color: color($menu-colors, menu-main-color);
+      overflow-y: auto; // for scroll bar in menu
+  
+      ion-item-group {
+        cursor: pointer; // for each menu group
+  
+        ion-item {
+          cursor: pointer; // for each menu item
+          padding-left: 2rem; // indent for menu
+        }
+      }
+    }
+  
+    .menu-main-color {
+      background-color: color($menu-colors, menu-main-color);
+      color: color($menu-colors, menu-text-white);
+    }
+  
+    .menu-sub-color {
+      background-color: color($menu-colors, menu-sub-color);
+      color: color($menu-colors, menu-text-white);
+    }
+  
+    .user-info {
+      margin-right: auto;
+  
+      p {
+        color: color($menu-colors, menu-text-white);
+      }
+  
+      span {
+        font-size: 1.8vw;
+      }
+    }
+  }
+  
+//   .validation-error {
+//     background-color: color($sip-colors, sip-validation-error);
+//   }
+  
+  .error-tooltip {
+    display: none;
+    list-style-position: inside;
+  
+    li {
+      margin-left: 5px;
+    }
+  }
+  
+//   .validation-error:hover + .error-tooltip {
+//     background-color: color($sip-colors, sip-validation-error);
+//     border-radius: 10px;
+//     color: color($sip-colors, sip-text-white);
+//     display: block;
+//     font-size: 90%;
+//     padding: 5px;
+//     position: absolute;
+//     top: 60%;
+//     width: calc(100% - 10px);
+//     z-index: 100;
+//   }
+  
+  .no-padding {
+    padding: 0 !important;
+  }
+  

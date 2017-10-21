@@ -13,8 +13,8 @@ export class ProductsService {
   constructor(private _http: HttpClient) { }
 
   // --- Category ---
-  getCategories(): Observable<Category> {
-    return this._http.get<Category>(this.categoryUrl);
+  getCategories(): Observable<Category[]> {
+    return this._http.get<Category[]>(this.categoryUrl);
   }
 
   getCategory(id: number): Observable<Category> {
