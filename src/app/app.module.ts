@@ -11,6 +11,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ProductsService } from '../services/product.service';
 import { UsersService } from '../services/user.service';
+import { PostmanService } from '../services/postman-data-upload.service';
 
 @NgModule({
   declarations: [MyApp],
@@ -33,6 +34,7 @@ import { UsersService } from '../services/user.service';
     SplashScreen,
     UsersService,
     ProductsService,
+    PostmanService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

@@ -4,6 +4,7 @@ import { ProductsService } from '../../services/product.service';
 import { UsersService } from '../../services/user.service';
 
 import { Product } from '../../models/Product';
+import { PostmanService } from '../../services/postman-data-upload.service';
 
 
 @IonicPage()
@@ -24,7 +25,10 @@ export class HomePage implements OnInit{
   Products: Product[] = [];
 
   grid = [];
-  constructor(public navCtrl: NavController, public navParams: NavParams, private svc: ProductsService) {
+  constructor(public navCtrl: NavController, 
+              public navParams: NavParams, 
+              private svc: ProductsService,
+              private fillsvc: PostmanService) {
   }
 
   ionViewDidLoad() {
@@ -51,6 +55,10 @@ export class HomePage implements OnInit{
       
       console.log(prod)
     });
+  }
+
+  fillData(){
+    this.fillsvc.fillData();
   }
 
   
