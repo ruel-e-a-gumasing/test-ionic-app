@@ -23,6 +23,7 @@ export class UsersService {
 
     return this._isAuthenticated;
   }
+
   public set isAuthenticated(v: boolean) {
     this._isAuthenticated = v;
   }
@@ -39,8 +40,8 @@ export class UsersService {
 
   constructor(private http: HttpClient) { }
 
-  getUsers(): Observable<User> {
-    return this.http.get<User>(this.userUrl);
+  getUsers(): Observable<User[]> {
+    return this.http.get<User[]>(this.userUrl);
   }
 
   getUser(id: number): Observable<User> {
@@ -60,21 +61,18 @@ export class UsersService {
   }
 
   // --- Login ---
-  // login(userName: string, password: string): Observable<User> {
-  //   return this.http.get<User>(this.userUrl)
-  //     .map(u =>
-  //       u.find(fu =>
-  //         fu.username === userName && fu.password === password))
-  //     .do(u => {
-  //       if (u) {
-  //         this.saveToStorage(u);
-  //       }
-  //     });
-  // }
+  login(userName: string, password: string): Observable<User> {
+    return this.getUsers()
+    .map(u => u.find(fu => fu.username === userName && fu.password === password))
+    .do(u => {if (u) {
+                      this.saveToStorage(u);
+                      }
+      });
+  }
 
   logoff() {
     this.removeFromStorage();
-  }
+  }  
 
   private saveToStorage(user: User) {
     localStorage.setItem('mystore.cred', JSON.stringify(user));

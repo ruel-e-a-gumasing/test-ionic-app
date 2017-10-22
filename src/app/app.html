@@ -56,7 +56,7 @@
   <ion-content>
     <ng-container *ngFor="let m of menuList; let i = index;">
       <ion-item-group>
-        <button ion-item no-lines class="menu-main-color" (click)="toggleList(i)">
+        <button ion-item no-lines class="menu-main-color" (click)="toggleList(i, m.title)">
           <ion-icon *ngIf="m.icon !== ''" name="{{m.icon}}"></ion-icon>
           {{ m.title }}
         </button>
